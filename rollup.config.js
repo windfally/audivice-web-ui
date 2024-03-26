@@ -13,15 +13,15 @@ export default {
   input: 'src/index.tsx', 
   output: [
     {
-        file: 'dist/bundle.js', 
-      format: 'cjs', 
-      sourcemap: true
+      file: packageJson.main,
+      format: 'cjs',
+      sourcemap: true,
     },
     {
       file: packageJson.module,
-      format: 'esm', 
-      sourcemap: true
-    }
+      format: 'esm',
+      sourcemap: true,
+    },
   ],
   plugins: [
     peerDepsExternal(),
@@ -29,7 +29,7 @@ export default {
     commonjs(),
     typescript({ tsconfig: './tsconfig.json' }), 
     babel({
-      exclude: 'node_modules/**',
+      exclude: ['node_modules/**', 'src/stories/**'],
       babelHelpers: 'bundled',
       include: ['src/**/*'],
       exclude: '**/*.stories.js'

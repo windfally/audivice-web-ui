@@ -1,0 +1,10 @@
+# Storybook files and directories
+.storybook
+src
+rollup.config.js
+tsconfig.json
+.eslintrc
+.gitignore
+.storybook
+stories
+tokens
